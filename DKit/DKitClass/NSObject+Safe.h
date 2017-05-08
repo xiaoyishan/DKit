@@ -11,6 +11,6 @@
 
 @interface NSObject (Safe)
 
-+(void)SafeModel:(NSObject*)Model;
 -(void)SafeModel;
+
 @end
