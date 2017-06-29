@@ -17,7 +17,7 @@
 @property NSDictionary  *key6;
 @property NSUInteger  key7;
 @property NSInteger  key8;
-@property NSObject  *key9;
+@property NSSet  *key9;
 @property double  key10;
 @property NSDictionary  *key11;
 
