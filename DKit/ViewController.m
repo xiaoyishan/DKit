@@ -10,16 +10,16 @@
 #import <objc/runtime.h>
 
 
-@interface ViewController ()
-@property (copy ,nonatomic) NSString *str;
-@end
-
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
 
+
+
+    CustomView = [[UserView alloc]initWithFrame:CGRectMake(0, 120, 320, 160)];
+    [self.view addSubview:CustomView];
 
 
 }
@@ -30,32 +30,25 @@
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
 
+    UserModel *model = [[UserModel alloc]init];
+    model.Name = @"MR.xie";
+    model.Age = 25;
+    model.Phone = 15358298472;
+    model.Home = @"WdEa74KDd92kdoriG82kkkH..ds copy";
 
-    user *yy =[user new];
+//    [CustomView MatchToModel:model];
 
-    [yy setKey2:@[]];
-    [yy setKey1:@"++++"];
-    yy.key3=@"123";
-    yy.key6=NULL;
-    yy.key7=nil;
-    yy.key8=NULL;
-    yy.key9=NULL;
-
+//    [CustomView MatchToModel:model Level:0];
 
 
+    [CustomView MatchToModel:model Level:13];
 
-    [yy SafeModel];
 
-
-    NSLog(@"%@",yy.description);
 
     
 
 
 }
-
-
-
 
 
 

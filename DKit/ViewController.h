@@ -6,20 +6,17 @@
 //  Copyright © 2017年 xiexin. All rights reserved.
 //
 #import "NSObject+Safe.h"
-#import "user.h"
+#import "UserView.h"
+#import "UserModel.h"
+
 
 #import <UIKit/UIKit.h>
 
+@interface ViewController : UIViewController{
+    UserView *CustomView;
+}
 
-
-#ifdef DEBUG
-#define DLog(format, ...) printf("DLog[%s] %s\n", __TIME__, [[NSString stringWithFormat:format, ## __VA_ARGS__] UTF8String])
-#else
-#define DLog(format, ...)
-#endif
-
-@interface ViewController : UIViewController
-
+@property (weak, nonatomic) IBOutlet UserView *myView;
 
 
 @end
