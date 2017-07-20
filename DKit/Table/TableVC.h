@@ -11,7 +11,9 @@
 #import "SimpleModel.h"
 #import "SimpleCell.h"
 
-#import "NSObject+Safe.h"
+#import "Dkit.h"
+
+
 
 
 @interface TableVC : UITableViewController
