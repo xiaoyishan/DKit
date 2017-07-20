@@ -27,7 +27,7 @@ Kill nil/null on common data type,  Makesure this class at build and run as a sa
     UserModel *model = [[UserModel alloc]init];
     model.Name = @"MR.xie";
     model.Age = 25;
-    model.Phone = 15358298472;
+    model.Phone = 15355555555;
     model.Home = @"WdEa74KDd92kdoriG82kkkH..ds copy";
 
     CustomView = [[UserView alloc]initWithFrame:CGRectMake(0, 120, 320, 160)];
