@@ -18,8 +18,7 @@
 
 
 
-    CustomView = [[UserView alloc]initWithFrame:CGRectMake(0, 120, 320, 160)];
-    [self.view addSubview:CustomView];
+
 
 
 }
@@ -36,7 +35,10 @@
     model.Phone = 15358298472;
     model.Home = @"WdEa74KDd92kdoriG82kkkH..ds copy";
 
-//    [CustomView MatchToModel:model];
+    CustomView = [[UserView alloc]initWithFrame:CGRectMake(0, 120, 320, 160)];
+    [self.view addSubview:CustomView];
+
+    //[CustomView MatchToModel:model];
 
 //    [CustomView MatchToModel:model Level:0];
 
