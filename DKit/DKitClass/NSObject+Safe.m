@@ -217,7 +217,7 @@
 
 
 /*
- *  自动匹配model和view中属性名字 并给相同的元素直接赋值 仅支持Label，button，textfield，textview
+ *  自动匹配model和view中属性名字 并给相同的元素直接赋值 仅支持Label，button，textfield，textview ,imageview
  */
 -(void)MatchToModel:(id)model{
 

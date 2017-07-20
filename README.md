@@ -6,7 +6,7 @@ Kill nil/null on common data type,  Makesure this class at build and run as a sa
 
 ## Match View to Model（自动把model中的值给view）
 
-*完全匹配和模糊匹配
+#   完全匹配 和 模糊匹配
 ```objective-c
 /* 
 *  自动匹配model和view中属性名字 并给相同的元素直接赋值
@@ -18,7 +18,7 @@ Kill nil/null on common data type,  Makesure this class at build and run as a sa
 -(void)MatchToModel:(id)model Level:(MatchLevel)level;
 ```
 
-*代码示例
+#   代码示例
 ```objective-c
 UserModel *model = [[UserModel alloc]init];
 model.Name = @"MR.xie";
@@ -44,6 +44,7 @@ return cell;
 }
 ```
 
+#   模糊匹配选项
 ```objective-c
 //模糊匹配等级 前后缀list由本class提供自定义数据 可自行增删
 typedef NS_ENUM(NSUInteger, MatchLevel) {
@@ -61,7 +62,7 @@ MatchCapNoPrefixAndSuffix,  //区分大小写 不区分前后缀
 
 
 
-*自定义前缀 
+#自定义前缀 
 ```objective-c
 //自定义前缀 各种形容词千奇百怪 如果你的view参数比较复杂奇葩建议用yymodel映射你的model
 -(NSArray*)PrefixArr{
@@ -70,7 +71,7 @@ return @[@"Pre",@"Prepare",@"Plan",@"Fitst",@"Second",@"End",@"Latest",@"Old",@"
 ```
 
 
-*自定义后缀 根据自身习惯增删 建议只保留4个统一的
+#自定义后缀 根据自身习惯增删 建议只保留4个统一的
 ```objective-c
 //自定义后缀
 -(NSArray*)SuffixArr{
