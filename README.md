@@ -10,13 +10,13 @@ Kill nil/null on common data type,  Makesure this class at build and run as a sa
 ```objective-c
 /* 
 *  自动匹配model和view中属性名字 并给相同的元素直接赋值
-*  仅支持Label，button，textfield，textview
+*  仅支持Label，button，textfield，textview ,imageview
 */
 -(void)MatchToModel:(id)model;
 
 /*  模糊匹配 */
 -(void)MatchToModel:(id)model Level:(MatchLevel)level;
-```objective-c
+```
 
 *代码示例
 ```objective-c
@@ -30,7 +30,7 @@ CustomView = [[UserView alloc]initWithFrame:CGRectMake(0, 120, 320, 160)];
 [self.view addSubview:CustomView];
 
 [CustomView MatchToModel:model];
-```objective-c
+```
 
 ```objective-c
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -42,7 +42,7 @@ SimpleModel *model = List[indexPath.row];
 
 return cell;
 }
-```objective-c
+```
 
 ```objective-c
 //模糊匹配等级 前后缀list由本class提供自定义数据 可自行增删
@@ -56,7 +56,7 @@ MatchCapNoPrefix = 11,      //区分大小写 不区分前缀
 MatchCapNoSuffix,           //区分大小写 不区分后缀
 MatchCapNoPrefixAndSuffix,  //区分大小写 不区分前后缀
 };
-```objective-c
+```
 
 
 
@@ -67,7 +67,7 @@ MatchCapNoPrefixAndSuffix,  //区分大小写 不区分前后缀
 -(NSArray*)PrefixArr{
 return @[@"Pre",@"Prepare",@"Plan",@"Fitst",@"Second",@"End",@"Latest",@"Old",@"New"];
 }
-```objective-c
+```
 
 
 *自定义后缀 根据自身习惯增删 建议只保留4个统一的
@@ -80,7 +80,7 @@ return @[@"L",@"Label",@"label",
 @"T",@"Text",@"TextView",@"Textview",@"textview",@"TV",
 @"IMG",@"Image",@"image",@"I",@"IV",@"Img",@"ImageView",@"Imageview",@"imageview",@"imageView"];
 }
-```objective-c
+```
 
 
 
