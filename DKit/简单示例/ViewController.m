@@ -19,7 +19,8 @@
 
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-
+    [self.view endEditing:YES];
+    
     UserModel *model = [[UserModel alloc]init];
     model.Name = @"MR.xie";
     model.Age = 25;
