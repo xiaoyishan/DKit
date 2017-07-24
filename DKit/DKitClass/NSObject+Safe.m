@@ -40,10 +40,13 @@
 
         id KeyValue = [self valueForKey:(NSString *)KeyName];
 
-        //异常处理
-        [self KillNilNuLL:KeyClass :KeyName :KeyValue];
+
         //类型同步
         [self ConsistentwithDefine:KeyClass :KeyName :KeyValue];
+        //异常处理
+        [self KillNilNuLL:KeyClass :KeyName :KeyValue];
+
+
     }
 
 }
@@ -103,8 +106,8 @@
         if ([KeyClass isEqualToString:@"Ti"]) {
             [self setValue:@([KeyValue intValue]) forKey:KeyName];
         }
-        if ([KeyClass isEqualToString:@"Ti"] ) {
-            [self setValue:@([KeyValue intValue]) forKey:KeyName];
+        if ([KeyClass isEqualToString:@"Td"] ) {
+            [self setValue:@([KeyValue doubleValue]) forKey:KeyName];
         }
         if ([KeyClass isEqualToString:@"Tf"] ) {
             [self setValue:@([KeyValue floatValue]) forKey:KeyName];

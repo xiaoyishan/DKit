@@ -16,6 +16,11 @@
 @property NSInteger Phone;
 @property NSString *Home;
 
-
+@property int key1;
+@property double key2;
+@property float key3;
+@property NSInteger key4;
+@property NSUInteger key5;
+@property id key6;
 
 @end
