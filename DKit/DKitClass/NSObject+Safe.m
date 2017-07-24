@@ -46,10 +46,6 @@
         [self ConsistentwithDefine:KeyClass :KeyName :KeyValue];
     }
 
-    [(UILabel*)self setValue:@"kkkkk" forKey:@"L1"];
-
-    UIButton *button = [self valueForKey:@"B1"];
-    [button setTitle:@"uuuuuuu" forState:UIControlStateNormal];
 }
 
 
