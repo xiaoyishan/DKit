@@ -110,7 +110,7 @@
         UIImageView *ImageView = (UIImageView*)[self valueForKey:subKey];
         
         //网络图片
-        if ([[(NSString*)subValue substringToIndex:4] isEqual:@"http"]) {
+        if ((NSString*)subValue length]>7 && [[(NSString*)subValue substringToIndex:4] isEqual:@"http"]) {
             [ImageView sd_setImageWithURL:subValue placeholderImage:ImageView.image];
         }
         //image对象
