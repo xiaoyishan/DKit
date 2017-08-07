@@ -94,23 +94,23 @@
 
 //赋值
 -(void)SetFitKeyTpye:(NSString*)subType Key:(NSString*)subKey Value:(id)subValue{
-    if ([subType isEqual:@"UIButton"]) {
+    if ([subType isEqual:@"UIButton"] && [(NSString*)subValue length]!=0) {
         UIButton *button = (UIButton*)[self valueForKey:subKey];
         button.Dtext = subValue;
     }
     if ([subType isEqual:@"UILabel"]||[subType isEqual:@"UITextField"]||[subType isEqual:@"UITextView"]) {
-        
+
         UILabel *label = (UILabel*)[self valueForKey:subKey];
         label.Dtext = subValue;
-        
-        
+
+
     }
-    
+
     if ([subType isEqual:@"UIImageView"]) {
         UIImageView *ImageView = (UIImageView*)[self valueForKey:subKey];
-        
+
         //网络图片
-        if ((NSString*)subValue length]>7 && [[(NSString*)subValue substringToIndex:4] isEqual:@"http"]) {
+        if ([(NSString*)subValue length]>7 && [[(NSString*)subValue substringToIndex:4] isEqual:@"http"]) {
             [ImageView sd_setImageWithURL:subValue placeholderImage:ImageView.image];
         }
         //image对象
@@ -129,7 +129,7 @@
         if ([subValue isKindOfClass:[UIImageView class]]) {
             ImageView.image = [(UIImageView*)subValue image];
         }
-        
+
     }
 }
 
