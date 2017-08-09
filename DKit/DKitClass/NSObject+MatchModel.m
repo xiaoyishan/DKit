@@ -57,6 +57,7 @@
         [self SetFitKeyTpye:KeyClass Key:KeyName Value:KeyValue];//赋值
         
     }
+    free(propertys);
 }
 
 /* 模糊匹配等级 */
@@ -90,28 +91,35 @@
         
         
     }
+    free(propertys);
 }
 
 //赋值
 -(void)SetFitKeyTpye:(NSString*)subType Key:(NSString*)subKey Value:(id)subValue{
-    if ([subType isEqual:@"UIButton"] && [(NSString*)subValue length]!=0) {
-        UIButton *button = (UIButton*)[self valueForKey:subKey];
-        button.Dtext = subValue;
+
+
+    if ([subType isEqual:@"UIButton"]) {
+        NSString *newValue = [NSString stringWithFormat:@"%@",subValue];
+        if (newValue.length>0) {
+            UIButton *button = (UIButton*)[self valueForKey:subKey];
+            button.Dtext = subValue;
+        }
+
     }
     if ([subType isEqual:@"UILabel"]||[subType isEqual:@"UITextField"]||[subType isEqual:@"UITextView"]) {
 
         UILabel *label = (UILabel*)[self valueForKey:subKey];
         label.Dtext = subValue;
-
-
     }
 
     if ([subType isEqual:@"UIImageView"]) {
         UIImageView *ImageView = (UIImageView*)[self valueForKey:subKey];
 
         //网络图片
-        if ([(NSString*)subValue length]>7 && [[(NSString*)subValue substringToIndex:4] isEqual:@"http"]) {
-            [ImageView sd_setImageWithURL:subValue placeholderImage:ImageView.image];
+        if ([subValue isKindOfClass:[NSString class]]) {
+            if ([(NSString*)subValue length]>5 && [[(NSString*)subValue substringToIndex:4] isEqual:@"http"]) {
+                [ImageView sd_setImageWithURL:subValue placeholderImage:ImageView.image];
+            }
         }
         //image对象
         if ([subValue isKindOfClass:[UIImage class]]) {
@@ -148,9 +156,11 @@
         NSString *myKey =[NSString stringWithUTF8String:propertyName];
         
         if ([keyName isEqual:myKey]) { //匹配
+            free(propertys);
             return [model valueForKey:(NSString *)myKey];
         }
     }
+    free(propertys);
     return @"";
 }
 
@@ -203,9 +213,11 @@
         
         
         if (IsFit) { //匹配
+            free(propertys);
             return [model valueForKey:(NSString *)myKey];
         }
     }
+    free(propertys);
     return @"";
 }
 

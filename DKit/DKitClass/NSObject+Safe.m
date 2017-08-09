@@ -48,6 +48,7 @@
 
 
     }
+    free(propertys);
 
 }
 
@@ -90,6 +91,7 @@
             [self setValue:[NSDate new] forKey:KeyName];
         }
     }
+
 }
 
 
@@ -182,6 +184,7 @@
         //类型同步
         [self ConsistentwithDefine:KeyClass :KeyName :KeyValue];
     }
+    free(propertys);
 }
 
 
