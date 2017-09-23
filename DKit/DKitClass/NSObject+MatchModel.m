@@ -236,7 +236,10 @@
 //比对 前缀 hasPrefix
 -(BOOL)isNoPrefixStrA:(NSString*)StrA With:(NSString*)StrB{
     for (NSString *Pre in [self PrefixArr]) {
-        if (StrB.length>Pre.length && [StrA isEqual:[StrB substringFromIndex:Pre.length]]) {
+//        if (StrB.length>Pre.length && [StrA isEqual:[StrB substringFromIndex:Pre.length]]) {
+//            return YES;
+//        }
+        if (StrB.length>Pre.length && [StrA hasPrefix:StrB]) {
             return YES;
         }
     }
@@ -246,7 +249,10 @@
 //比对 后缀 hasSuffix
 -(BOOL)isNoSuffixStrA:(NSString*)StrA With:(NSString*)StrB{
     for (NSString *Suf in [self SuffixArr]) {
-        if (StrB.length>Suf.length && [StrA isEqual:[StrB substringToIndex:Suf.length]]) {
+//        if (StrB.length>Suf.length && [StrA isEqual:[StrB substringToIndex:Suf.length]]) {
+//            return YES;
+//        }
+        if (StrB.length>Suf.length && [StrA hasSuffix:StrB]) {
             return YES;
         }
     }
