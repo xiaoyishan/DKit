@@ -22,5 +22,6 @@
 @property NSInteger key4;
 @property NSUInteger key5;
 @property id key6;
+@property NSString *key7;
 
 @end

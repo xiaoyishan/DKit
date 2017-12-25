@@ -11,6 +11,7 @@
 
 @implementation UILabel (Dtext)
 -(void)setDtext:(NSString *)Dtext{
+    if([Dtext isKindOfClass:[NSNumber class]])Dtext = [(NSNumber*)Dtext NumberToString]; // 浮点溢出
     Dtext = [NSString stringWithFormat:@"%@",Dtext];
     if (Dtext.length==0) {self.text=@"";return;}
     if ([Dtext isEqualToString:@"<null>"]||[Dtext isEqualToString:@"(null)"]){self.text=@"";return;}
@@ -25,6 +26,7 @@
 
 @implementation UITextField (Dtext)
 -(void)setDtext:(NSString *)Dtext{
+    if([Dtext isKindOfClass:[NSNumber class]])Dtext = [(NSNumber*)Dtext NumberToString]; // 浮点溢出
     Dtext = [NSString stringWithFormat:@"%@",Dtext];
     if (Dtext.length==0) {self.text=@"";return;}
     if ([Dtext isEqualToString:@"<null>"]||[Dtext isEqualToString:@"(null)"]){self.text=@"";return;}
@@ -39,6 +41,7 @@
 
 @implementation UITextView (Dtext)
 -(void)setDtext:(NSString *)Dtext{
+    if([Dtext isKindOfClass:[NSNumber class]])Dtext = [(NSNumber*)Dtext NumberToString]; // 浮点溢出
     Dtext = [NSString stringWithFormat:@"%@",Dtext];
     if (Dtext.length==0) {self.text=@"";return;}
     if ([Dtext isEqualToString:@"<null>"]||[Dtext isEqualToString:@"(null)"]){self.text=@"";return;}
@@ -57,6 +60,7 @@
 
 @implementation UIButton (Dtext)
 -(void)setDtext:(NSString *)Dtext{
+    if([Dtext isKindOfClass:[NSNumber class]])Dtext = [(NSNumber*)Dtext NumberToString]; // 浮点溢出
     Dtext = [NSString stringWithFormat:@"%@",Dtext];
 
     

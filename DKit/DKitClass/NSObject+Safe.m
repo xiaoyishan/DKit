@@ -18,7 +18,7 @@
 
 #pragma mark -- 模型处理
 
--(void)SafeModel{
+-(void)ModelSafe{
 
     //属性个数
     unsigned int propertyCount = 0;
@@ -39,7 +39,7 @@
         NSString *KeyName =[NSString stringWithUTF8String:propertyName];
 
         id KeyValue = [self valueForKey:(NSString *)KeyName];
-
+        
 
         //类型同步
         [self ConsistentwithDefine:KeyClass :KeyName :KeyValue];
@@ -136,7 +136,14 @@
         }
 
         if ([KeyClass isEqualToString:@"NSString"] && ![KeyValue isKindOfClass:[NSString class]]) {
-            [self setValue:[NSString stringWithFormat:@"%@",KeyValue] forKey:KeyName];
+            if([KeyValue isKindOfClass:[NSNumber class]]){
+                KeyValue = [(NSNumber*)KeyValue NumberToString]; // 浮点溢出
+                //NSLog(@"浮点溢出:Name:%@ Value:%@",KeyName,KeyValue);
+                [self setValue:[NSString stringWithFormat:@"%@",KeyValue] forKey:KeyName];
+            }else{
+               [self setValue:[NSString stringWithFormat:@"%@",KeyValue] forKey:KeyName];
+            }
+        
         }
         if ([KeyClass isEqualToString:@"NSMutableString"] && ![KeyValue isKindOfClass:[NSMutableString class]]) {
             [self setValue:[NSMutableString stringWithFormat:@"%@",KeyValue] forKey:KeyName];
@@ -158,7 +165,7 @@
 #pragma mark -- 清理
 
 
--(void)ClearModel{
+-(void)ModelClear{
 
     unsigned int propertyCount = 0;
     objc_property_t *propertys = class_copyPropertyList([self class], &propertyCount);

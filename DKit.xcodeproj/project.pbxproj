@@ -23,6 +23,7 @@
 		5A340A8A1F20F11000009A90 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 5A340A891F20F11000009A90 /* README.md */; };
 		5A340A901F20F46B00009A90 /* NSObject+MatchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A340A8F1F20F46B00009A90 /* NSObject+MatchModel.m */; };
 		6F5B3EFF6366A52AEEA84D26 /* libPods-DKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC0C80D0FA523AB075321BE0 /* libPods-DKit.a */; };
+		84B6430C1FF0A87700409E9B /* NSNumber+Overflow.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B6430B1FF0A87700409E9B /* NSNumber+Overflow.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,8 @@
 		5A340A8F1F20F46B00009A90 /* NSObject+MatchModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MatchModel.m"; sourceTree = "<group>"; };
 		5A340A911F20F51300009A90 /* Dkit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Dkit.h; sourceTree = "<group>"; };
 		6B38CA34D747BDAB4E95EC72 /* Pods-DKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DKit/Pods-DKit.debug.xcconfig"; sourceTree = "<group>"; };
+		84B6430A1FF0A87700409E9B /* NSNumber+Overflow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+Overflow.h"; sourceTree = "<group>"; };
+		84B6430B1FF0A87700409E9B /* NSNumber+Overflow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+Overflow.m"; sourceTree = "<group>"; };
 		B1EE9FCBCE1D67DDBFB8135D /* Pods-DKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-DKit/Pods-DKit.release.xcconfig"; sourceTree = "<group>"; };
 		DC0C80D0FA523AB075321BE0 /* libPods-DKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -170,6 +173,8 @@
 				21151F141EB1EEFB00DBE88B /* NSObject+Safe.m */,
 				5A340A8E1F20F46B00009A90 /* NSObject+MatchModel.h */,
 				5A340A8F1F20F46B00009A90 /* NSObject+MatchModel.m */,
+				84B6430A1FF0A87700409E9B /* NSNumber+Overflow.h */,
+				84B6430B1FF0A87700409E9B /* NSNumber+Overflow.m */,
 			);
 			path = DKitClass;
 			sourceTree = "<group>";
@@ -329,13 +334,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DKit-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -353,6 +361,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				215168351F21ACC7007F10CF /* ViewController.m in Sources */,
+				84B6430C1FF0A87700409E9B /* NSNumber+Overflow.m in Sources */,
 				215168361F21ACC7007F10CF /* SimpleCell.m in Sources */,
 				2158EB931F1F4EF6007E2A9F /* UIKit+Dtext.m in Sources */,
 				215168371F21ACC7007F10CF /* SimpleModel.m in Sources */,

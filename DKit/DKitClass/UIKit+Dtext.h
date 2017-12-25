@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "NSNumber+Overflow.h"
 
 @interface UILabel (Dtext)
 -(void)setDtext:(NSString *)Dtext;

@@ -15,7 +15,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    CustomView = [[UserView alloc]initWithFrame:CGRectMake(0, 120, 320, 160)];
+    CustomView = [[UserView alloc]initWithFrame:CGRectMake(15, 120, 300, 160)];
     [self.view addSubview:CustomView];
 
 }
@@ -24,17 +24,28 @@
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self.view endEditing:YES];
 
+
+    
+    NSString* json = @"{\"number\":66.51}";
+    NSData* data = [json dataUsingEncoding:NSUTF8StringEncoding];
+    NSDictionary* numdic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
+    
+    
     NSDictionary *dic = @{@"key1" : @"32",
                           @"key2" : @"234.1",
-                          @"key3" : @"34",
+                          @"key3" : @"213.2",
                           @"key4" : @"-392",
                           @"key5" : @"-23",
                           @"key6" : @"12",
+                          @"key7" : numdic[@"number"]
                           };
 
     UserModel *model = [UserModel yy_modelWithDictionary:dic];
-    [model SafeModel];
+    model.key7 = numdic[@"number"];
+    [model ModelSafe];
     NSLog(@"%@" , [model yy_modelDescription]);
+    
+    CustomView.NameLabel.Dtext = numdic[@"number"];
 
 }
 
