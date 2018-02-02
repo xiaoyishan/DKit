@@ -20,7 +20,7 @@
 //自定义后缀 根据自身习惯增删 建议只保留4个统一的
 -(NSArray*)SuffixArr{
     return @[@"L",@"Label",@"label",
-             @"B",@"Btn",@"Button",@"btn",@"B",@"button",
+             @"B",@"Btn",@"Button",@"btn",@"button",
              @"F",@"Field",@"field",@"TextField",@"textfield",@"textField",@"Textfield",@"TF",
              @"T",@"Text",@"TextView",@"Textview",@"textview",@"TV",
              @"IMG",@"Image",@"image",@"I",@"IV",@"Img",@"ImageView",@"Imageview",@"imageview",@"imageView"];
