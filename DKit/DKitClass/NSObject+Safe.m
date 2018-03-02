@@ -182,14 +182,17 @@
         const char * propertyName = property_getName(property);
         NSString *KeyName =[NSString stringWithUTF8String:propertyName];
 
-        id KeyValue = [self valueForKey:(NSString *)KeyName];
+        // 基础类型
+        if ([[KeyClass substringToIndex:1] isEqualToString:@"T"]) {
+            [self setValue:@0 forKey:KeyName];
+        }
+        // NS对象
+        if ([[KeyClass substringToIndex:2] isEqualToString:@"NS"]) {
+            [self setValue:nil forKey:KeyName];
+        }
 
-        [self setValue:nil forKey:KeyName];
-
-        //异常处理
-        [self KillNilNuLL:KeyClass :KeyName :KeyValue];
-        //类型同步
-        [self ConsistentwithDefine:KeyClass :KeyName :KeyValue];
+        
+        
     }
     free(propertys);
 }
