@@ -1,6 +1,6 @@
 ##  Match Class 
 
-* 统一model中常用的数据类型, 以model定义为准 同时过滤nil null（Kill nil/null on common data type,  Makesure this class at build and run as a same class except basic class）
+* 统一model中常用的数据类型, 以model定义为准 同时过滤nil null
 
 * 提供一个置空model的方法 比较适合处理单例
 
